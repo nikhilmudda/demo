@@ -1,0 +1,115 @@
+/* Custom Design Tokens */
+:root {
+    --bg-color: #fcfbfa;
+    --text-color: #1a1a1a;
+    --accent-color: #706f6c;
+    --button-bg: #1a1a1a;
+    --button-text: #fcfbfa;
+    --transition-speed: 0.4s;
+}
+
+/* Dark Mode Tokens */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e5e5e5;
+    --accent-color: #a3a3a3;
+    --button-bg: #e5e5e5;
+    --button-text: #121212;
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout Parts */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle:hover {
+    opacity: 0.7;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+footer {
+    padding: 2rem 10%;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+/* Small Screens Responsive Rule */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
